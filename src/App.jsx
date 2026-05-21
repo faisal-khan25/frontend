@@ -3,29 +3,46 @@ import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import Navbar from './components/common/Navbar';
 
-// pages
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import BrowseJobs from './pages/jobseeker/BrowseJobs';
-import MyApplications from './pages/jobseeker/MyApplications';
-import MyProfile from './pages/jobseeker/MyProfile';
-import CompanyProfile from './pages/manager/CompanyProfile';
-import ManageJobs from './pages/manager/ManageJobs';
-import Applicants from './pages/manager/Applicants';
-import AdminDashboard from './pages/admin/AdminDashboard';
+// // pages
+// import Home from './pages/Home';
+// import Login from './pages/Login';
+// import Register from './pages/Register';
+// import BrowseJobs from './pages/jobseeker/BrowseJobs';
+// import MyApplications from './pages/jobseeker/MyApplications';
+// import MyProfile from './pages/jobseeker/MyProfile';
+// import CompanyProfile from './pages/manager/CompanyProfile';
+// import ManageJobs from './pages/manager/ManageJobs';
+// import Applicants from './pages/manager/Applicants';
+// import AdminDashboard from './pages/admin/AdminDashboard';
 
-// layouts
-import JobSeekerLayout from './components/jobseeker/JobSeekerLayout';
-import ManagerLayout from './components/manager/ManagerLayout';
-import AdminLayout from './components/admin/AdminLayout';
+// // layouts
+ import JobSeekerLayout from './components/jobseeker/JobSeekerLayout';
+ import ManagerLayout from './components/manager/ManagerLayout';
+ import AdminLayout from './components/admin/AdminLayout';
+import { lazy, Suspense } from "react";
+
+
+// Lazy Loaded Pages
+const Home = lazy(() => import("./pages/Home"));
+const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
+const BrowseJobs = lazy(() => import("./pages/jobseeker/BrowseJobs"));
+const MyApplications = lazy(() => import("./pages/jobseeker/MyApplications"));
+const MyProfile = lazy(() => import("./pages/jobseeker/MyProfile"));
+const CompanyProfile = lazy(() => import("./pages/manager/CompanyProfile"));
+const ManageJobs = lazy(() => import("./pages/manager/ManageJobs"));
+const Applicants = lazy(() => import("./pages/manager/Applicants"));
+const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
+
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Navbar />
-        <Routes>
+        {/* <Routes> */}
+        <Suspense fallback={<div style={{padding:'40px',textAlign:'center'}}>Loading…</div>}>
+       <Routes>
           {/* public */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -74,6 +91,7 @@ function App() {
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+         </Suspense>
       </BrowserRouter>
     </AuthProvider>
   );

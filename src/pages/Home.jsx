@@ -43,7 +43,8 @@ export default function Home() {
   const { user } = useAuth();
 
   return (
-    <div>
+    // <div>
+   <main>
       {/* ===== HERO ===== */}
       <section style={{
         background: 'linear-gradient(135deg, #1e3a5f 0%, #1e40af 50%, #1d4ed8 100%)',
@@ -155,17 +156,25 @@ export default function Home() {
                 boxShadow: 'var(--shadow-sm)',
                 cursor: 'pointer',
               }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'var(--brand-red)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = 'var(--shadow-md)';
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'var(--gray-200)';
-                e.currentTarget.style.transform = '';
-                e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
-              }}
+              // onMouseEnter={e => {
+              //   e.currentTarget.style.borderColor = 'var(--brand-red)';
+              //   e.currentTarget.style.transform = 'translateY(-2px)';
+              //   e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+              // }}
+              // onMouseLeave={e => {
+              //   e.currentTarget.style.borderColor = 'var(--gray-200)';
+              //   e.currentTarget.style.transform = '';
+              //   e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+              // }}
               >
+                onMouseEnter={e => {
+  e.currentTarget.style.borderColor = 'var(--brand-red)';
+  e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+}}
+onMouseLeave={e => {
+  e.currentTarget.style.borderColor = 'var(--gray-200)';
+  e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+}}
                 <span style={{ fontSize: 28 }}>{cat.icon}</span>
                 <div>
                   <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--gray-800)' }}>{cat.label}</div>
@@ -267,6 +276,7 @@ export default function Home() {
       }}>
         © 2025 HireX · India's Premier Job Platform
       </footer>
-    </div>
+      {/* </div> */}
+    </main>
   );
 }

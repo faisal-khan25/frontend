@@ -9,9 +9,9 @@ export default function AdminLayout({ children }) {
           📊 Growth Dashboard
         </NavLink>
       </aside>
-      <div className="dashboard-main">
+     <main className="dashboard-main">
         {children}
-      </div>
+      </main>
     </div>
   );
 }

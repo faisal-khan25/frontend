@@ -44,9 +44,10 @@ export default function JobSeekerLayout({ children }) {
       </aside>
 
       {/* MAIN CONTENT */}
-      <div className="dashboard-main">
+      <main className="dashboard-main">
         {children}
-      </div>
+        </main>
+      
 
     </div>
   );

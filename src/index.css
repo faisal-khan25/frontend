@@ -151,12 +151,19 @@ input, textarea, select {
 .navbar .nav-links button:hover {
   color: var(--gray-900);
   background: var(--gray-100);
+   
+
 }
 
-.navbar .nav-user-info {
+/* .navbar .nav-user-info {
   font-size: 13px;
   color: var(--gray-500);
   padding: 0 6px;
+} */
+ .navbar .nav-user-info {
+  color: var(--gray-700);
+   font-size: 13px; 
+    font-weight: 700;  /* #374151 — passes WCAG AA */
 }
 
 /* ===== BUTTONS ===== */
@@ -184,7 +191,6 @@ input, textarea, select {
 .btn-primary:hover {
   background: var(--brand-red-dark);
   border-color: var(--brand-red-dark);
-  transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(255,101,36,0.35);
 }
 
@@ -197,7 +203,7 @@ input, textarea, select {
 .btn-secondary:hover {
   background: var(--brand-blue-dark);
   border-color: var(--brand-blue-dark);
-  transform: translateY(-1px);
+  
 }
 
 .btn-outline {
