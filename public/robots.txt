@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: /jobs
+Allow: /login
+Allow: /register
+Disallow: /jobseeker/
+Disallow: /manager/
+Disallow: /admin/
+
+Sitemap: https://new-job-portal-frontend.onrender.com/sitemap.xml
