@@ -4,7 +4,7 @@ import axios from 'axios';
 // //  'https://backend-7aoi.onrender.com';
 
 const BACKEND_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:8080";
+  import.meta.env.VITE_API_URL || "https://backend-7aoi.onrender.com";
 
 console.log(BACKEND_URL);
 
