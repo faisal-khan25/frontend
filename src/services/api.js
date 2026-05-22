@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 //  const BACKEND_URL = import.meta.env.VITE_API_URL='http://localhost:8080'
-// //  'https://new-backend-job-portal.onrender.com';
+// //  'https://backend-7aoi.onrender.com';
 
 const BACKEND_URL =
   import.meta.env.VITE_API_URL || "http://localhost:8080";
