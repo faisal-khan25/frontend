@@ -6,7 +6,7 @@ import axios from 'axios';
 const BACKEND_URL =
   import.meta.env.VITE_API_URL || "https://backend-7aoi.onrender.com";
 
-console.log(BACKEND_URL);
+
 
 const api = axios.create({
   baseURL: BACKEND_URL,
